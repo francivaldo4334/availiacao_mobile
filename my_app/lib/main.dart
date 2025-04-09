@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/ui/screens/DetailsPerson.dart';
+import 'package:my_app/ui/screens/HomeScreen.dart';
+import 'package:my_app/ui/screens/ListScreen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,10 +12,16 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
+    return MaterialApp(
+      initialRoute: "/home",
+      routes: {
+        "/home": (context)=> HomeScreen(),
+        "/list": (context) => ListScreen(),
+        "/details": (context) => DetailsPerson()
+      },
+      home: const Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: Text('Hello Francivaldo!'),
         ),
       ),
     );
